@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <h1>Projects</h1>
 
@@ -17,48 +16,14 @@
       <tr>
         <td><%= project.title %></td>
         <td><%= project.description %></td>
-        #<% if user_signed_in? %>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        #<% end %> 
-        </tr>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
-<div class="w3-container w3-green">
-  <p>What did we get last time?</p>
-</div>
-<div class="w3-container">
-    <table class="w3-table-all">
-        <thead>
-          <tr class="w3-green">
-            <th>Resturant</th>
-            <th>Distance: Miles</th>
-            <th>Price: $</th>
-            <th>Guests </th>
-          </tr>
-        </thead>
-        <tr>
-          <td>Qudoba</td>
-          <td>4.3</td>
-          <td>$</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Red Leg Brewing Co.</td>
-          <td>0.5</td>
-          <td>$$</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td>EMI Thai</td>
-          <td>2</td>
-          <td>$$</td>
-          <td>3</td>
-        </tr>
-    </table>
-</div>
+<br>
 
 <%= link_to 'New Project', new_project_path %>
