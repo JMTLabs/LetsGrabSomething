@@ -15,6 +15,8 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "New Project"
 
     fill_in "Description", with: @project.description
+    fill_in "Distance", with: @project.distance
+    fill_in "Price", with: @project.price
     fill_in "Title", with: @project.title
     click_on "Create Project"
 
@@ -27,6 +29,8 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Description", with: @project.description
+    fill_in "Distance", with: @project.distance
+    fill_in "Price", with: @project.price
     fill_in "Title", with: @project.title
     click_on "Update Project"
 

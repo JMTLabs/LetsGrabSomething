@@ -1,64 +1,135 @@
 <p id="notice"><%= notice %></p>
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<h1>Projects</h1>
+<style>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+#grad1 {
+  height: 200px;
+  background-color: #cccccc;
+  background-image: linear-gradient(white, blue);
+}
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        #<% if user_signed_in? %>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        #<% end %> 
-        </tr>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #7393B3;
+  color: white;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+
+
+<body style="background-color:lightgrey;">
+
+<div class="w3-container w3-blue">
+  <h5>Where are we going?</h5>
+</div>
+
+
+<table id="customers">
+  <tr>
+    <th>Resturant Name</th>
+    <th>Style</th>
+    <th>Distance</th>
+    <th>Price</th>
+    <% if user_signed_in? %>
+      <th>Show Meal Details</th>
+      <th>Change Meal Detials</th>
+      <th>Delete Meal</th>
     <% end %>
-  </tbody>
+  </tr>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.title %></td>
+      <td><%= project.description %></td>
+      <td><%= project.distance %></td>
+      <td><%= project.price %></td>
+      <% if user_signed_in? %>
+        <td><%= link_to 'Show Meal Details', project %></td>
+        <td><%= link_to 'Change Meal Detials', edit_project_path(project) %></td>
+        <td><%= link_to 'Delete Meal', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
 </table>
 
-<div class="w3-container w3-green">
-  <p>What did we get last time?</p>
-</div>
-<div class="w3-container">
-    <table class="w3-table-all">
-        <thead>
-          <tr class="w3-green">
-            <th>Resturant</th>
-            <th>Distance: Miles</th>
-            <th>Price: $</th>
-            <th>Guests </th>
-          </tr>
-        </thead>
-        <tr>
-          <td>Qudoba</td>
-          <td>4.3</td>
-          <td>$</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>Red Leg Brewing Co.</td>
-          <td>0.5</td>
-          <td>$$</td>
-          <td>7</td>
-        </tr>
-        <tr>
-          <td>EMI Thai</td>
-          <td>2</td>
-          <td>$$</td>
-          <td>3</td>
-        </tr>
-    </table>
+<div class="w3-container w3-blue">
+  <h5>Whats Near by?</h5>
 </div>
 
-<%= link_to 'New Project', new_project_path %>
+<table id="customers">
+  <tr>
+    <th>Resturant Name</th>
+    <th>Distance (Miles)</th>
+    <th>Price ($)</th>
+    <th>Style</th>
+  </tr>
+  <tr>
+    <td>Chick-fil-A</td>
+    <td>5</td>
+    <td>10</th>
+    <td>fast food</th>
+  </tr>
+  <tr>
+    <td>Qdoba</td>
+    <td>5</td>
+    <td>12</th>
+    <td>fast food</th>
+  </tr>
+  <tr>
+    <td>EMI Thai</td>
+    <td>4</td>
+    <td>20</th>
+    <td>sit down</th>
+  </tr>
+  <tr>
+    <td>Jersey Mikes</td>
+    <td>2</td>
+    <td>15</th>
+    <td>fast food</th>
+  </tr>
+  <tr>
+    <td>Redleg Brewing Co.</td>
+    <td>0.5</td>
+    <td>25</th>
+    <td>sit down</th>
+  </tr>
+</table>
+
+<div class="w3-container w3-blue">
+  <h5>Wanna eat?</h5>
+  <p><%= button_to "Lets Grab Something", new_project_path, :method => :get %></p>
+</div>
+
+
+<br>

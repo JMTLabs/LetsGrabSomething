@@ -12,13 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :Resturant %>
+    <p><%= form.text_field :title %></p>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.label :Style %>
+    <p><%= form.text_field :description %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :Distance %>
+    <p><%= form.number_field :distance %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :Price %>
+    <p><%= form.text_field :price %></p>
   </div>
 
   <div class="actions">

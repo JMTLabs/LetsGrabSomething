@@ -1,5 +1,25 @@
-<h1>New Project</h1>
+<style> 
+#grad1 {
+  height: 400px;
+  background-color: white;
+  background-image: linear-gradient(Baby Blue, white);
+}
+</style>
 
-<%= render 'form', project: @project %>
 
-<%= link_to 'Back', projects_path %>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body style="background-color:lightgrey;">
+  <div class="w3-container w3-blue">
+  <h5>Lets Grab Something</h5>
+  <p><%= render 'form', project: @project %></p>
+  </div>
+  <div class="w3-container w3-lightgrey">
+  <h5>      </h5>
+  <p>       </p>
+  </div>
+  <div class="w3-container w3-blue">
+  <h5>Not Hungry?</h5>
+  <p><%= button_to "Nevermind, Lets try again some other time", projects_path, :method => :get %></p>
+  </div>
+</body>

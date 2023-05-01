@@ -1,6 +1,20 @@
-<h1>Editing Project</h1>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body style="background-color:lightgrey;">
+<div class="w3-container w3-blue">
+  <h5>Lets grab something else</h5>
+  <p>
+    <%= render 'form', project: @project %>
+  </p>
+</div>
 
-<%= render 'form', project: @project %>
+<div class="w3-container w3-lightgrey">
+  <h5>      </h5>
+  <p>       </p>
+</div>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+
+<div class="w3-container w3-blue">
+  <h5>Lets go eat!</h5>
+  <p><%= button_to "Home", projects_path, :method => :get %></p>
+</div>
+</body>

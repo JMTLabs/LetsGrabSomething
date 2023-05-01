@@ -1,16 +1,44 @@
-<p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body style="background-color:lightgrey;">
+<div class="w3-container w3-blue">
+  <h5>Where we are eating</h5>
+  <p>
+    <strong>Resturant Name:</strong>
+    <%= @project.title %>
+  </p>
+  <p>
+    <strong>Style:</strong>
+    <%= @project.description %>
+  </p>
+  <p>
+    <strong>Distance:</strong>
+    <%= @project.distance %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @project.price %>
+  </p>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div class="w3-container w3-lightgrey">
+  <h5>      </h5>
+  <p>       </p>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="w3-container w3-blue">
+  <h5>Something Else?</h5>
+  <p><%= button_to "Wait! Lets try try here instead", edit_project_path(@project), :method => :get %></p>
+</div>
 
-##############################################
+<div class="w3-container w3-lightgrey">
+  <h5>      </h5>
+  <p>       </p>
+</div>
+
+<div class="w3-container w3-blue">
+  <h5>Lets go eat!</h5>
+  <p><%= button_to "Home", projects_path, :method => :get %></p>
+</div>
+
+</body>
